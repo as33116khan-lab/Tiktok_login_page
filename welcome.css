@@ -1,0 +1,302 @@
+:root {
+    --bg-0: #050505;
+    --bg-1: #101010;
+    --surface: rgba(20, 20, 20, 0.88);
+    --surface-soft: rgba(28, 28, 28, 0.9);
+    --text-strong: #f7f7f7;
+    --text-mid: #d6d6d6;
+    --text-muted: #9d9d9d;
+    --border: rgba(255, 255, 255, 0.14);
+    --primary: #fe2c55;
+    --primary-soft: #ff4c74;
+    --ring: rgba(254, 44, 85, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "DM Sans", "Segoe UI", Tahoma, sans-serif;
+    color: var(--text-strong);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(254, 44, 85, 0.24), transparent 42%),
+        radial-gradient(circle at 90% 80%, rgba(147, 14, 40, 0.32), transparent 45%),
+        linear-gradient(155deg, var(--bg-0) 0%, var(--bg-1) 100%);
+}
+
+.site-brand {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.45rem 0.75rem 0.45rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(9, 9, 9, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(8px);
+}
+
+.site-brand__logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #fe2c55, #c9193d);
+}
+
+.site-brand__text {
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: 0.96rem;
+    font-weight: 600;
+}
+
+.welcome-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+    padding: 5rem 1rem 1rem;
+}
+
+.ambient {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(8px);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.ambient--one {
+    width: 240px;
+    height: 240px;
+    top: 12%;
+    left: 8%;
+    background: radial-gradient(circle at 36% 36%, rgba(255, 85, 120, 0.74), rgba(255, 85, 120, 0));
+    animation: floatOne 9s ease-in-out infinite;
+}
+
+.ambient--two {
+    width: 340px;
+    height: 340px;
+    bottom: 8%;
+    right: 4%;
+    background: radial-gradient(circle at 36% 36%, rgba(211, 29, 66, 0.66), rgba(211, 29, 66, 0));
+    animation: floatTwo 11s ease-in-out infinite;
+}
+
+.ambient--three {
+    width: 180px;
+    height: 180px;
+    bottom: 24%;
+    left: 26%;
+    background: radial-gradient(circle at 36% 36%, rgba(117, 14, 35, 0.58), rgba(117, 14, 35, 0));
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.welcome-card {
+    position: relative;
+    width: min(860px, 100%);
+    z-index: 2;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: clamp(1.2rem, 2.8vw, 2.4rem);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+    transform: translateY(10px);
+    opacity: 0;
+    animation: cardIn 700ms ease forwards;
+}
+
+.eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.75rem;
+}
+
+h1 {
+    margin: 0.5rem 0 0.6rem;
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: clamp(1.8rem, 4.8vw, 3rem);
+    line-height: 1.08;
+}
+
+.subtitle {
+    margin: 0;
+    color: var(--text-mid);
+    font-size: clamp(1rem, 2.3vw, 1.2rem);
+}
+
+.greeting-lines {
+    margin-top: 1.2rem;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.greeting-lines p {
+    margin: 0;
+    color: var(--text-mid);
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+.greeting-lines p:nth-child(1) {
+    animation: lineIn 550ms ease 260ms forwards;
+}
+
+.greeting-lines p:nth-child(2) {
+    animation: lineIn 550ms ease 420ms forwards;
+}
+
+.greeting-lines p:nth-child(3) {
+    animation: lineIn 550ms ease 580ms forwards;
+}
+
+.greeting-lines p:nth-child(4) {
+    animation: lineIn 550ms ease 640ms forwards;
+}
+
+.countdown-panel {
+    margin-top: 1.4rem;
+    background: var(--surface-soft);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+.countdown-panel h2 {
+    margin: 0;
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+}
+
+.countdown-panel > p {
+    margin: 0.5rem 0 1rem;
+    color: var(--text-mid);
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.time-chip {
+    padding: 0.8rem 0.6rem;
+    border-radius: 14px;
+    text-align: center;
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(254, 44, 85, 0.35);
+    box-shadow: inset 0 0 0 1px rgba(254, 44, 85, 0.2);
+}
+
+.time-chip span {
+    display: block;
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: clamp(1.45rem, 4vw, 2rem);
+    line-height: 1;
+    color: var(--primary);
+}
+
+.time-chip small {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.status {
+    margin: 0.95rem 0 0;
+    color: #ffd6df;
+    font-size: 0.95rem;
+}
+
+@keyframes cardIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes lineIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatOne {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(12px, -8px) scale(1.05);
+    }
+}
+
+@keyframes floatTwo {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-14px, 8px) scale(0.97);
+    }
+}
+
+@keyframes pulseGlow {
+    0%,
+    100% {
+        opacity: 0.58;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+}
+
+@media (max-width: 540px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .welcome-shell {
+        padding-top: 5.4rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .site-brand {
+        top: 12px;
+        left: 12px;
+    }
+
+    .countdown-grid {
+        gap: 0.55rem;
+    }
+}
