@@ -1,0 +1,336 @@
+:root {
+    --bg-0: #050505;
+    --bg-1: #111111;
+    --surface: #121212;
+    --surface-soft: #1a1a1a;
+    --text-strong: #f5f5f5;
+    --text-mid: #c5c5c5;
+    --text-muted: #999999;
+    --border: #2b2b2b;
+    --primary: #fe2c55;
+    --primary-strong: #ff4f70;
+    --ring: rgba(254, 44, 85, 0.34);
+    --danger: #ff5a76;
+    --card-shadow: 0 22px 48px rgba(0, 0, 0, 0.62);
+    --radius-xl: 24px;
+    --radius-md: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "DM Sans", "Segoe UI", Tahoma, sans-serif;
+    color: var(--text-strong);
+    background:
+    radial-gradient(circle at 12% 18%, rgba(254, 44, 85, 0.2), transparent 40%),
+    radial-gradient(circle at 88% 82%, rgba(160, 21, 45, 0.32), transparent 46%),
+        linear-gradient(160deg, var(--bg-0) 0%, var(--bg-1) 100%);
+}
+
+.site-brand {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.45rem 0.75rem 0.45rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(9, 9, 9, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(8px);
+}
+
+.site-brand__logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #fe2c55, #c9193d);
+}
+
+.site-brand__text {
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: 0.96rem;
+    font-weight: 600;
+}
+
+.auth-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.auth-panel {
+    display: none;
+}
+
+.auth-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1rem;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    background: rgba(18, 18, 18, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--card-shadow);
+    padding: 1.4rem;
+    backdrop-filter: blur(8px);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.brand-mark {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 0.8rem;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    background: #0b0b0b;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 10px 26px rgba(254, 44, 85, 0.35);
+}
+
+.brand-logo {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.card-header h1 {
+    font-family: "Sora", "DM Sans", sans-serif;
+    font-size: clamp(1.5rem, 4.6vw, 1.95rem);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.card-header p {
+    margin: 0.45rem 0 0;
+    font-size: 0.95rem;
+    color: var(--text-mid);
+}
+
+.login-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.8rem;
+}
+
+label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+input {
+    width: 100%;
+    min-height: 52px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--surface-soft);
+    color: var(--text-strong);
+    padding: 0.8rem 0.95rem;
+    font-size: 0.97rem;
+    outline: none;
+    transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+input::placeholder {
+    color: #7f7f7f;
+}
+
+input:focus-visible {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--ring);
+    background: #151515;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--danger);
+}
+
+.login-btn {
+    min-height: 52px;
+    width: 100%;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #fe2c55, #c9193d);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: transform 150ms ease, filter 150ms ease, box-shadow 150ms ease;
+    box-shadow: 0 12px 24px rgba(254, 44, 85, 0.35);
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.login-btn:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+}
+
+.login-btn.is-loading {
+    background: linear-gradient(135deg, #6b6b6b, #454545);
+    cursor: progress;
+}
+
+.muted-link,
+.create-account a {
+    color: var(--primary-strong);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.muted-link {
+    font-size: 0.82rem;
+}
+
+.muted-link:hover,
+.create-account a:hover {
+    text-decoration: underline;
+}
+
+.create-account {
+    margin: 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+}
+
+@media (max-width: 540px) {
+    .site-brand {
+        top: 12px;
+        left: 12px;
+    }
+}
+
+@media (min-width: 700px) {
+    .auth-main {
+        padding: 2rem;
+    }
+
+    .login-card {
+        border-radius: var(--radius-xl);
+        padding: 1.8rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .auth-shell {
+        grid-template-columns: minmax(300px, 1fr) minmax(420px, 520px);
+    }
+
+    .auth-panel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 2.5rem;
+        background: linear-gradient(160deg, #080808 0%, #171717 52%, #340d16 100%);
+        color: #fff;
+    }
+
+    .auth-panel__content {
+        position: relative;
+        z-index: 2;
+        max-width: 380px;
+    }
+
+    .auth-panel__content h2 {
+        margin: 0 0 0.85rem;
+        font-family: "Sora", "DM Sans", sans-serif;
+        font-size: clamp(1.7rem, 2.3vw, 2.4rem);
+        line-height: 1.15;
+    }
+
+    .auth-panel__content p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+    }
+
+    .eyebrow {
+        margin: 0 0 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.66);
+    }
+
+    .auth-panel__glow {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(2px);
+    }
+
+    .auth-panel__glow--one {
+        width: 320px;
+        height: 320px;
+        top: -78px;
+        left: -44px;
+        background: radial-gradient(circle at 35% 35%, rgba(255, 78, 115, 0.56), rgba(255, 78, 115, 0));
+    }
+
+    .auth-panel__glow--two {
+        width: 360px;
+        height: 360px;
+        right: -120px;
+        bottom: -130px;
+        background: radial-gradient(circle at 35% 35%, rgba(195, 23, 58, 0.56), rgba(195, 23, 58, 0));
+    }
+
+    .auth-main {
+        padding: 2rem 2.6rem;
+    }
+
+    .login-card {
+        max-width: 470px;
+    }
+}
