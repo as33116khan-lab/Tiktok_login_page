@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connectly | Login</title>
+
+    <meta name="description" content="Connectly login page UI.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <a class="site-brand" href="index.html" aria-label="Back to Connectly login">
+        <span class="site-brand__logo" aria-hidden="true">C</span>
+        <span class="site-brand__text">Connectly</span>
+    </a>
+
+    <main class="auth-shell">
+
+        <!-- Left Panel -->
+        <section class="auth-panel">
+            <div class="auth-panel__glow auth-panel__glow--one"></div>
+            <div class="auth-panel__glow auth-panel__glow--two"></div>
+
+            <div class="auth-panel__content">
+                <p class="eyebrow">Welcome back</p>
+                <h2>Login to become part of Connectly and get 10K followers</h2>
+                <p>Connectly helps you stay close to friends, communities, and the stories you care about.</p>
+            </div>
+        </section>
+
+        <!-- Right Login Section -->
+        <section class="auth-main">
+
+            <article class="login-card">
+
+                <header class="card-header">
+                    <div class="brand-mark" aria-hidden="true">
+                        <img class="brand-logo" src="https://cdn.simpleicons.org/tiktok/ffffff" alt="">
+                    </div>
+                    <h1>TikTok</h1>
+                    <p>Connect with people around the world</p>
+                </header>
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm" class="login-form" novalidate>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <button id="login-button" class="login-btn" type="submit">
+                        Login
+                    </button>
+
+                    <!-- <p class="create-account">
+                        New to Connectly?
+                        <a href="#">Create account</a>
+                    </p> -->
+
+                </form>
+
+            </article>
+
+        </section>
+
+    </main>
+</body>
+</html>
