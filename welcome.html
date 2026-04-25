@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connectly | Welcome</title>
+    <meta name="description" content="Welcome screen for new Connectly members.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="welcome.css">
+    <script src="welcome.js" defer></script>
+</head>
+<body>
+    <a class="site-brand" href="index.html" aria-label="Back to Connectly login">
+        <span class="site-brand__logo" aria-hidden="true">C</span>
+        <span class="site-brand__text">Connectly</span>
+    </a>
+
+    <main class="welcome-shell">
+        <div class="ambient ambient--one"></div>
+        <div class="ambient ambient--two"></div>
+        <div class="ambient ambient--three"></div>
+
+        <section class="welcome-card">
+            <p class="eyebrow">You are in</p>
+            <h1>Welcome to Connectly</h1>
+            <p class="subtitle" id="welcomeMessage">You are now part of the Connectly community.</p>
+
+            <div class="greeting-lines">
+                <p>Your account has been created successfully.</p>
+                <p>Thank you for becoming part of Connectly.</p>
+                <p>We are preparing your dashboard experience now.</p>
+                <p>You will get your 10K followers once your account is fully activated.</p>
+            </div>
+
+            <article class="countdown-panel" aria-live="polite">
+                <h2>Dashboard setup in progress</h2>
+                <p>Please wait while your dashboard is set up in the next 24 hours.</p>
+
+                <div class="countdown-grid">
+                    <div class="time-chip">
+                        <span id="hours">24</span>
+                        <small>Hours</small>
+                    </div>
+                    <div class="time-chip">
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="time-chip">
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+
+                <p class="status" id="countdownStatus">Timer started. We will notify you when everything is ready.</p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
